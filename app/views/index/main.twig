@@ -1,0 +1,38 @@
+{% extends "template.twig" %}
+
+{% block meta %}
+<meta name="description" content="{{ description }}">
+{% endblock %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+	<div class="inner-container container col-md-offset-8 col-md-4">
+		<div class="lang">
+			<ul>
+				<li><a href="{{ lt }}"><img src="{{ images['LT.jpg'] }}"></a></li>
+				<li><a href="{{ en }}"><img src="{{ images['EN.jpg'] }}"></a></li>
+			</ul>
+		</div>
+		<div class="content-holder">
+			<div class="header">
+				<h1>{{ name }}</h1>
+			</div>
+			<div class="campers">
+				<h2>{{ campers }}</h2>
+				<ul>
+					<li><a href="{{ link_camper }}">{{ camper_name }}</a></li>
+				</ul>
+			</div>
+			<div class="contacts">
+				<ul>
+					{% for info in misc_info %}
+						<li>{{ info|raw }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+{% endblock %}

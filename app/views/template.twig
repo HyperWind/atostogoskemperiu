@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<meta name="google-site-verification" content="dVXWK1mnTyVT8xtHfekqwhsWW0WaG4nEtc4fhPa1eXk" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Made by Karolis Lasys (https://hyperwind.github.io)">
+		<!-- I know, the design sucks, but the client demanded it to look this way. :/ -->
+		<link rel="icon" type="image/png" href="{{ images['favicon.png'] }}">
+		{% block meta %}{% endblock %}
+		<title>{% block title %}{% endblock %}</title>
+		{% block stylesheets %}
+			{% if stylesheets|length > 0 %}
+				{% for sheet in stylesheets %}
+					<link rel="stylesheet" href="{{ sheet }}">
+				{% endfor %}
+			{% endif %}
+		{% endblock %}
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans|Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		{% block content %}
+		{% endblock %}
+		{% block javasripts %}
+			{% if javascripts|length > 0 %}
+				{% for script in javascripts %}
+					<script src="{{ script }}"></script>
+				{% endfor %}
+			{% endif %}
+		{% endblock %}
+	</body>
+</html>

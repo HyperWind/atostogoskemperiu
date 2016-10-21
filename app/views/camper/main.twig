@@ -1,0 +1,41 @@
+{% extends "template.twig" %}
+
+{% block meta %}
+<meta name="description" content="{{ camper_name }} {{ available }}">
+{% endblock %}
+
+{% block title %}
+	{{ name }} - {{ camper_name }}
+{% endblock %}
+
+{% block content %}
+	<div class="inner-container container col-md-5">
+		<div class="content-holder">
+			<div class="header">
+				<h1>{{ camper_name }}</h1>
+			</div>
+      <div class="calendar">
+        <p>{{ availability }}</p>
+        <iframe id="calendar-iframe" src="https://calendar.google.com/calendar/embed?bgcolor=%23ffcc33&showTitle=0&showDate=0&showPrint=0&showTabs=0&showCalendars=0&src=cbpn69birghs28jeravhq6o6nc%40group.calendar.google.com&ctz=Europe/Vilnius" style="border:solid 1px #777" frameborder="0" scrolling="no"></iframe>
+			</div>
+			<ul class="pictures">
+				<li class="pic"><img name="{{ images['6.jpg'] }}" src="{{ images['micro-6.jpg'] }}"></li>
+				<li class="pic"><img name="{{ images['7.jpg'] }}" src="{{ images['micro-7.jpg'] }}"></li>
+				<li class="pic"><img name="{{ images['1.jpg'] }}" src="{{ images['micro-1.jpg'] }}"></li>
+				<li class="pic"><img name="{{ images['5.jpg'] }}" src="{{ images['micro-5.jpg'] }}"></li>
+				<li class="pic"><img name="{{ images['2.jpg'] }}" src="{{ images['micro-2.jpg'] }}"></li>
+				<li class="pic"><img name="{{ images['3.jpg'] }}" src="{{ images['micro-3.jpg'] }}"></li>
+				<li class="pic"><img name="{{ images['4.jpg'] }}" src="{{ images['micro-4.jpg'] }}"></li>
+				<li class="pic"><img name="{{ images['0.jpg'] }}" src="{{ images['micro-0.jpg'] }}"></li>
+				<li class="pic"><img name="{{ images['plan.jpg'] }}" src="{{ images['micro-plan.jpg'] }}"></li>
+			</ul>
+			<div class="info">
+				<p>{{ info|raw }}</p>
+				<a href="{{ link }}">{{ back }}</a>
+			</div>
+		</div>
+	</div>
+	<div id="viewer" class="viewer">
+		<img id="viewer-image" class="viewer-image" src="">
+	</div>
+{% endblock %}
